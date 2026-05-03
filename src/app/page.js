@@ -5,6 +5,8 @@ import {
   writeFile,
 } from '../helpers/file-helpers';
 
+import Obscure from '../components/obscure';
+
 const DATABASE_PATH = '/src/database.json';
 
 /*
@@ -35,7 +37,11 @@ function Home() {
   return (
     <main>
       <h1>Welcome!</h1>
-      <p>You are visitor number <button className='censored'>{hits}</button>.</p>
+      <p>You are visitor number {' '}
+      <Obscure>
+        {hits}
+      </Obscure>.
+      </p>
     </main>
   );
 }
